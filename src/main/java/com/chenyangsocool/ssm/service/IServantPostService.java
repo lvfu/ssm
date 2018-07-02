@@ -2,13 +2,10 @@ package com.chenyangsocool.ssm.service;
 
 import com.chenyangsocool.ssm.model.PostBean;
 import com.chenyangsocool.ssm.model.ServantItem;
-import com.chenyangsocool.ssm.model.Test;
 
 import java.util.List;
 
-public interface IServantService {
+public interface IServantPostService {
 
-    public List<ServantItem> getServants(int id);
-
-
+    public List<ServantItem> getPostServants(PostBean postBean);
 }

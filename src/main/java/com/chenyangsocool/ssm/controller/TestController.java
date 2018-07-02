@@ -31,7 +31,7 @@ public class TestController {
 
     @RequestMapping("/index_api")
     @ResponseBody
-    public Test Index(HttpServletRequest request,Model model) {
+    public Test Index(HttpServletRequest request, Model model) {
         int id = Integer.parseInt(request.getParameter("id"));
         return this.testService.getModelById(id);
     }

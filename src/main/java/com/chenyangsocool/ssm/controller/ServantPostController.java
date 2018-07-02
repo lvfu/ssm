@@ -2,9 +2,8 @@ package com.chenyangsocool.ssm.controller;
 
 import com.chenyangsocool.ssm.model.PostBean;
 import com.chenyangsocool.ssm.model.ServantItem;
-import com.chenyangsocool.ssm.model.Test;
+import com.chenyangsocool.ssm.service.IServantPostService;
 import com.chenyangsocool.ssm.service.IServantService;
-import com.chenyangsocool.ssm.service.ITestService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,24 +12,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.jsp.jstl.sql.Result;
 import java.util.List;
 
 @Controller
-@RequestMapping("/servant")
-public class ServantController {
+@RequestMapping("/servantPost")
+public class ServantPostController {
 
 
     @Resource
-    private IServantService servantService;
+    private IServantPostService servantService;
 
 
-    @RequestMapping("/index_servant")
+    @RequestMapping("/servants")
     @ResponseBody
-    public List<ServantItem> servantIndex(HttpServletRequest request, Model model) {
-        int id = Integer.parseInt(request.getParameter("id"));
-        return this.servantService.getServants(id);
+    public List<ServantItem> add(@RequestBody PostBean postBean) {
+        return this.servantService.getPostServants(postBean);
     }
-
 
 }

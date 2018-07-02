@@ -5,8 +5,7 @@ import com.chenyangsocool.ssm.model.ServantItem;
 
 import java.util.List;
 
-public interface ServantDao {
-    List<ServantItem> getServants(int id);
+public interface ServantPostDao {
 
-    List<ServantItem> getPostServants(int id,String nickName);
+    List<ServantItem> getPostServants(PostBean postBean);
 }
